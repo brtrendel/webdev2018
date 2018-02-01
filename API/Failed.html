@@ -1,0 +1,89 @@
+
+<DOCTYPE html>
+
+    <html>
+        
+    <style>
+        body{background-color:#d2e0e0;}
+        p, h1 {font-family: helvetica;}
+        p {font-size: 1.2em;line-height:1.5em; margin-left: 24px; }
+        pre {font-size: 2em;}
+        div { border: 5px solid black; margin: 4px; border-radius: 5px; background-color: #ededed; margin: 20px 20px 20px 20px; }
+        button {
+                background-color: #4CAF50; 
+                border: none; 
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            
+            }
+            h2
+            {
+                color:darkblue;
+            
+            }
+    </style>        
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+            <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/resource/psqp-6rmg.json",
+                        success: function(result) {
+                            console.log(result);
+                            var output = "";
+                            
+                            $.each(result, function(index, value){
+                                //console.log(index + " " + value);
+                                
+                                // output += "<div class='output'>" + value.building_street + " " + value.original_lse_report_approved + "</div>";
+                                
+                                $("#results").append("<div><h1>" + value.name_ + "</h1>" +
+                                    "<p><h2>Hours of Operation:</h2> " + value.hours_of_operation + "<br>" +
+                                    "<h2>Location:</h2> " + value.address + 
+                                    
+                                    "</p>" +
+                                    "</div>"); 
+                            
+                            });
+                            //$("#results").html(output);
+                        }
+                    })
+                });
+            });
+        </script>
+       
+        
+        <style>
+            .output{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="div1">
+            <h1 style="text-align:center">Chicago Library Data</h1>
+        </div>
+        
+        <div class = "app-info"><h3 style="text-align:center"> This app contains information about every Chicago Public Library.</h3></div>
+
+        <center><button>Click here for more information</button></center>
+        
+        <div id="results">
+            
+        </div>
+    </body>
+
+    </html>
+<script src="/_static/preview/livecss.js"></script>
