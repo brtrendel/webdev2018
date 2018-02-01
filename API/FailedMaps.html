@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 50;
+        padding: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center">Chicago Library Map</h1>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: 28.024, lng: -72.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: 42.00670763656976, lng: -87.67340767268539},
+        {lat: 41.99833902904292, lng: -87.6996500514452},
+        {lat: 41.9969708834685, lng: -87.7620478920105},
+        {lat: 41.99191752494232, lng: -87.79830189864583},
+        {lat: 41.977961140156296, lng: -87.8132091093451},
+        {lat: 41.990996, lng: -87.660757},
+        {lat: 41.98457226437275, lng: -87.69773449236712},
+        {lat: 41.975456, lng:-87.71409},
+        {lat: 41.968354456496165, lng: -87.7381618989123},
+        {lat: 41.96759739182978, lng:  -87.76155426232721},
+        {lat: 41.95317390064158, lng: -87.77938682073541},
+        {lat: 41.943308, lng: -87.817497},
+        {lat: 41.97168194800458, lng: -87.66073027218957},
+        {lat: 41.96240358108169, lng: -87.68441684946531},
+        {lat: 41.953903720729926, lng: -87.71694255042644},
+        {lat: 41.93877675039972, lng: -87.75449293765163},
+        {lat: 41.93666211869315, lng:  -87.78589145006396},
+        {lat: 41.921114724943386, lng:  -87.79724102070298},
+        {lat: 41.958445207514295, lng: -87.65351012268938},
+        {lat: 41.94031359562259, lng: -87.67075771281625},
+        {lat: 41.92505210078537, lng: -87.70339410925955},
+        {lat: 41.91004241611636, lng: -87.73392609215429},
+        {lat: 41.895046508790834, lng: -87.74732954000841},
+        {lat: 41.889272153514526, lng: -87.76571186722818},
+        {lat: 41.90942919798428, lng: -87.76879898888265 },
+        {lat: 41.90386938756309, lng: -87.63648979790898},
+        {lat: 41.895752189070784, lng: -87.6682665907951},
+        {lat: 41.8943707, lng: -87.7064607 },
+        {lat: 41.87933865849079, lng:-87.72556034620074 },
+        {lat:41.89758435399726 , lng:-87.62314877110073 },
+        {lat: 41.87629985357702, lng:-87.62819280116949 },
+        {lat: 41.86927614852819, lng:-87.65447998408592 },
+        {lat:41.864500759742604 , lng:-87.70968548933996 },
+        {lat: 41.85752200960524, lng:-87.6609371162563 },
+        {lat: 41.8495331, lng:-87.7051215 },
+        {lat:41.84205367070128, lng:-87.72496884474246 },
+        {lat:41.85412074173438, lng: -87.63195792246246}, 
+        {lat:41.83180139956726, lng:-87.6177606656296 },
+        {lat:41.8284268698988, lng:-87.62640221644719 },
+        {lat: 41.83228703346308, lng:-87.64648501124545},
+        {lat:41.830447500170855 , lng:-87.67339165430255 },
+        {lat: 41.815138789328266, lng: -87.70265431614907},
+        {lat: 41.8058403098503, lng:-87.58934182212592 },
+        {lat: 41.80743298280974, lng:-87.62273981936815 },
+        {lat: 41.815505684396335, lng:-87.64250101465565},
+        {lat: 41.808384423666354, lng: -87.67756963874196},
+        {lat: 41.8012136599335, lng: -87.72649071431441},
+        
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZIMfRVApH7LSKKcbcfPP767LOSaMoqyg&callback=initMap">
+    </script>
+  </body>
+</html>

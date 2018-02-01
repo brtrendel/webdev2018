@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+     $("#btn1").click(function(){
+        $("h1, h2, p, h3, li, div").toggleClass("red");
+    });
+$("#btn2").click(function(){
+        $("p, h2, h3, li, div").toggle();
+});
+  
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Blake's Page</title>
+<style>
+.red {
+    color: red;
+}
+img {
+    display: block;
+    margin: auto ;
+    border: 5px solid black;
+    ;
+}
+body {
+  background-color:#AFEEEE;
+}
+ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    overflow: hidden;
+    background-color: teal;
+}
+
+.nav {
+  float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 25px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<body>
+
+<ul>
+  <li><a class="active nav" href="About_Me_Page.html">Home</a></li>
+  <li class="nav"><a href="Interest_Page_1.html">Biking Page</a></li>
+  <li class="nav"><a href="Interest_Page_3.html">Music Page</a></li>
+  <li class="nav"><a href="Interest_Page_2.html">Friends Page</a></li>
+</ul>
+<h1 style="text-align:center; font-family:verdana;">Blake's Page</h1>
+<img src="IMG_4391.PNG" alt="Blake Photo" width="220" height="270">
+</head>
+<h3 style="text-align:center;" class="text-primary">Welcome to my page!</h3>
+<button id="btn1">Change the color of text</button>
+<button id="btn2">Remove text</button>
+<p>Here's a list of some of my hobbies:</p>
+<ol>
+  <li style="text-align:auto;">Biking</li>
+  <li style="text-align:auto;">Hanging out with friends</li>
+  <li style="text-align:auto;">Making Music</li>
+</ol>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:white;">Biking is one of my favorite hobbies because it's a good workout and with a group of people its fun to 
+travel around the city on them</div>
+    <div class="col-sm-4" style="background-color:white;">Hanging out with friends is always fun no matter what we are doing. Especially going to concerts
+and the beach.</div>
+    <div class="col-sm-4" style="background-color:white;">Making and listening to music has always been a passion of mine and it's fun to explore new ideas
+through music and even record with friends.</div>
+  </div>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="bike.jpg" alt="Bike">
+    </div>
+    <div class="item">
+      <img src="northcoast.jpeg" alt="northcoast">
+    </div>
+    <div class="item">
+      <img src="home-recording-studio.jpg" alt="studio">
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</body>
+</html>
