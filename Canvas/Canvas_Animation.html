@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body onload="startGame()">
+
+<h1 style="text-align:center; color:black">Canvas Picture</h1>
+<canvas id="myCanvas" width="900" height="350"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+
+
+
+
+
+
+
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "green";
+ctx.fillRect(0,0,900,350);
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "blue";
+ctx.fillRect(0,0,900,250)
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.beginPath();
+ctx.arc(650,300,40,0,2*Math.PI);
+ctx.fillStyle = 'black';
+ctx.fill();
+
+var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var x = 188;
+      var y = 30;
+      var width = 100;
+      var height = 37;
+      var speedX = 0;
+      var x = x;
+      var imageObj = new Image();
+      
+      imageObj.onload = function() {
+        context.drawImage(imageObj, -400, -670);
+      };
+      imageObj.src = "golfclub.png";
+
+var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var x = 150;
+      var y = 270;
+      var width = 50;
+      var height = 50;
+      var imageObj2 = new Image();
+      imageObj2.onload = function() {
+        context.drawImage(imageObj2, x, y, width, height);
+      };
+      imageObj2.src = "ball.svg";
+
+</script> 
+<button onclick="moveright()">Hit Ball</button>
+
+</body>
+</html>
