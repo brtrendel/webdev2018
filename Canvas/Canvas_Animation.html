@@ -3,10 +3,10 @@
 <html>
 
 <head>
-<h1>Blake's Animation</h1>
+<h1>Blake's Abstract Animation</h1>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
-canvas {
+canvas {s
     border:1px solid #d3d3d3;
     background-color: black;
 }
@@ -16,17 +16,40 @@ canvas {
 <script>
 
 var myGamePiece;
-
+var star;
+var star2;
+var star3;
+var star4;
+var star5;
+var star6;
+var star7;
+var star8;
+var star9;
+var star10;
+var star11;
+var star12;
 function startGame() {
     myGamePiece = new component(50, 50, "yellow", 170, 30);
+    star = new component(50,50,"purple",200,30);
+    star2 = new component(50,50,"green",230,30);
+    star3 = new component(50,50,"#2DDED9",260,30);
+    star4 = new component(50,50,"#FD0338",290,30);
+    star5 = new component(50,50,"white",320,30);
+    star6 = new component(50,50,"orange",350,30);
+    star7 = new component(50,50,"blue",380,30);
+    star8 = new component(50,50,"pink",120,30);
+    star9 = new component(50,50,"#77B892",90,30);
+    star10 = new component(50,50,"#CFCFCF",60,30);
+    star11 = new component(50,50,"#99E7F3",30,30);
+    star12 = new component(50,50,"#B699F3",0,30);
     myGameArea.start();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 500;
-        this.canvas.height = 300;
+        this.canvas.width = 700;
+        this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);        
@@ -45,10 +68,10 @@ function component(width, height, color, x, y, type) {
     this.height = height;
     this.x = x;
     this.y = y;    
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.gravity = 0.2;
-    this.gravitySpeed = 0.1;
+    this.speedX = 2;
+    this.speedY = 1;    
+    this.gravity = 0;
+    this.gravitySpeed = 0.2;
     this.bounce = 0.9;
     this.update = function() {
         ctx = myGameArea.context;
@@ -74,7 +97,33 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
+    star.newPos();
+    star.update();
+    star2.newPos();
+    star2.update();
+    star3.newPos();
+    star3.update();
+    star4.newPos();
+    star4.update();
+    star5.newPos();
+    star5.update();
+    star6.newPos();
+    star6.update();
+    star7.newPos();
+    star7.update();
+    star8.newPos();
+    star8.update();
+    star9.newPos();
+    star9.update();
+    star10.newPos();
+    star10.update();
+    star11.newPos();
+    star11.update();
+    star12.newPos();
+    star12.update();
 }
+
+
 
 </script>
 
