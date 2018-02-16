@@ -28,27 +28,42 @@ var star9;
 var star10;
 var star11;
 var star12;
+var star13;
+var star14;
+var star15;
+var star16;
+var star17;
+var star18;
+var star19;
+
 function startGame() {
-    myGamePiece = new component(50, 50, "yellow", 170, 30);
-    star = new component(50,50,"purple",200,30);
-    star2 = new component(50,50,"green",230,30);
-    star3 = new component(50,50,"#2DDED9",260,30);
-    star4 = new component(50,50,"#FD0338",290,30);
-    star5 = new component(50,50,"white",320,30);
-    star6 = new component(50,50,"orange",350,30);
-    star7 = new component(50,50,"blue",380,30);
-    star8 = new component(50,50,"pink",120,30);
-    star9 = new component(50,50,"#77B892",90,30);
-    star10 = new component(50,50,"#CFCFCF",60,30);
-    star11 = new component(50,50,"#99E7F3",30,30);
-    star12 = new component(50,50,"#B699F3",0,30);
+    myGamePiece = new component(60, 50, "#693CBF", 170, 30);
+    star = new component(70,50,"#6631CC",200,30);
+    star2 = new component(80,50,"#6529D9",230,30);
+    star3 = new component(90,50,"#834FE6",260,30);
+    star4 = new component(100,50,"#996BF0",290,30);
+    star5 = new component(110,50,"#B695F3",320,30);
+    star6 = new component(120,50,"#C6AEF4",350,30);
+    star7 = new component(130,50,"#E7DEF9",380,30);
+    star8 = new component(50,50,"#62449B",120,30);
+    star9 = new component(40,50,"#5A4387",90,30);
+    star10 = new component(30,50,"#524076",60,30);
+    star11 = new component(20,50,"#473B5F",30,30);
+    star12 = new component(10,50,"#3D354D",0,30);
+    star13 = new component(20,50,"#063029",-30,30);
+    star14 = new component(30,50,"#094339",-60,30);
+    star15 = new component(40,50,"#0B5C4E",-90,30);
+    star16 = new component(50,50,"#107564",-120,30);
+    star17 = new component(60,50,"#128E79",-150,30);
+    star18 = new component(70,50,"#13AA90",-180,30);
+    star19 = new component(80,50,"#16C7A8",-210,30);
     myGameArea.start();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 700;
+        this.canvas.width = 750;
         this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
@@ -121,6 +136,20 @@ function updateGameArea() {
     star11.update();
     star12.newPos();
     star12.update();
+    star13.newPos();
+    star13.update();
+    star14.newPos();
+    star14.update();
+    star15.newPos();
+    star15.update();
+    star16.newPos();
+    star16.update();
+    star17.newPos();
+    star17.update();
+    star18.newPos();
+    star18.update();
+    star19.newPos();
+    star19.update();
 }
 
 
