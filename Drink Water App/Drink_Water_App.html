@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+     $("#btn1").click(function(){
+        $("h1, h2, p, h3, li, div").toggleClass("red");
+    });
+$("#btn2").click(function(){
+        $("p, h2, h3, li, div").toggle();
+});
+  
+});
+</script>
+<head>
+<ul>
+  <li><a class="active nav" href="Drink_Water_App.html">Home</a></li>
+  <li class="nav"><a href="Water_Drinking_Times.html">Drinking Times</a></li>
+  <li class="nav"><a href="Water_About.html">About </a></li>
+  <li class="nav"><a href="Water_Purity.html">Water Purity </a></li>
+</ul>
+      <h1 style="text-align:center; font-family:verdana;">Drink Water App</h1>
+</head>
+<body style="background-color:lightskyblue;">
+       <style>
+    canvas { 
+    border:1px solid #d3d3d3;
+    
+    }
+    img {
+    display: block;
+    margin: auto ;
+}
+ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    overflow: hidden;
+    background-color: teal;
+}
+.nav {
+  float: left; position: relative;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 90px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<br>
+<br>
+<img src="https://image.flaticon.com/icons/svg/247/247546.svg" title="Water Bottle" width=30% height=10%>
+<h2 style="text-align:center; font-family:verdana;">Let us help you quench your dehydration.</h2>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script>
+  var baseURL = 'https://data.cityofchicago.org/resource/46rk-hgnz.json';
+  var url = baseURL;
+        
+        console.log (url);
+        $(
+            $.getJSON(url)
+                .done (function (data) {
+                    console.log(data);
+                    $.each(data, function(index, value){
+                       var html =  "<div><h1>" + "Department: " + value.department  + "</h1>" +
+                                    "<p>Average Salary: " + value.annual_salary + "<br>" +
+                                    "Job Staus: " + value.full_or_part_time + "<br>" + "Job Tile:"+ value.job_titles 
+                                    
+                                    "</p>" +
+                                    "</div>";
+                                    
+                                    
+                        $("body").append(html);
+                    });
+                })
+            
+            
+        )
+  
+</html>
+
+
+
+link http://163.191.83.31/dww/JSP/WaterSystems.jsp?PointOfContactType=none&number=&name=&county=Cook

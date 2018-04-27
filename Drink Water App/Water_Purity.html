@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+     $("#btn1").click(function(){
+        $("h1, h2, p, h3, li, div").toggleClass("red");
+    });
+$("#btn2").click(function(){
+        $("p, h2, h3, li, div").toggle();
+});
+  
+});
+</script>
+    <head>
+        <ul>
+  <li><a class="nav" href="Drink_Water_App.html">Home</a></li>
+  <li class="nav"><a href="Water_Drinking_Times.html">Drinking Times</a></li>
+  <li class="active nav"><a href="Water_About.html">About </a></li>
+  <li class="nav"><a href="Water_Purity.html">Water Purity </a></li>
+</ul>
+        <title>Water</title>
+        <h2 style="text-align:center;">Chicago Beach Water Quality</h2>
+        <style>
+            p, h1 {font-family:verdana;}
+            p {font-size:1.5em;line-height:1.5em; margin-left: 24px;}
+            pre {font-size: 2em;}
+            h1 { border: 10px solid Black; margin: 4px; border-radius: 5px; background-color: #38DCCF}
+        p { border: 10px solid Black; margin: 4px; border-radius: 5px; background-color: #2BD3FC}
+           #map {
+            height: 400px;
+            width: 100%;
+           }
+        ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    overflow: hidden;
+    background-color: teal;
+}
+.nav {
+  float: left; position: relative;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 90px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+        
+        </style>
+    </head>
+    
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script>
+        /*
+            This script retrieves 311 pot hole service request data for 
+            from the 
+            City of Chicago Data Portal
+            
+            This script doesn't update the DOM.
+
+        */
+
+        // base URL to the food inspections data
+        var baseURL = 'https://data.cityofchicago.org/resource/46rk-hgnz.json';
+         // optional filters we're appending - status
+
+        
+        // full URL
+        
+        var url = baseURL;
+        
+        console.log (url);
+        
+        $(
+            // jQuery command to retrieve json data
+            
+            $.getJSON(url)
+                .done (function (data) {
+                    // TODO:  add script to add data to the DOM
+                    console.log(data);
+
+                    // loop through the records
+                    
+                    $.each(data, function(index, value){
+                       var html =  "<div><h1>" + "Name: " + value.beach_name  + "</h1>" +
+                                    "<p>Temperature: " + value.water_temperature + "<br>" +
+                                    "Turbidity: " + value.turbidity + "<br>" + 
+                                    
+                                    "</p>" +
+                                    "</div>";
+                                    
+                                    
+                        $("body").append(html);
+                    });
+                })
+            
+            
+        )
+        
+        
+
+    </script>
+    </body>
+    
+    </html>
+        
+ 
