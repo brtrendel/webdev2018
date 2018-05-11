@@ -23,7 +23,7 @@ $("#btn2").click(function(){
   <li class="nav"><a href="Water_About.html">About </a></li>
   <li class="nav"><a href="Water_Purity.html">Water Purity </a></li>
 </ul>
-      <h1 style="text-align:center; font-family:verdana;">Water drinking times </h1>
+      <h1 style="text-align:center; font-family:verdana;">Water Drinking Times </h1>
 </head>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,15 +71,31 @@ li a:hover {
 <p id="demo"></p>
 <img src="https://image.flaticon.com/icons/svg/247/247546.svg" title="Water Bottle" width=20% height=10% align="left">
 <img src="https://image.flaticon.com/icons/svg/247/247546.svg" title="Water Bottle" width=20% height=10% align="right">
+<br>
+<br>
+<h3 style="text-align:center; font-family:verdana; color:White">The timer is set for 3 hours. Everytime the countdown reaches 0, drink 8 ounces of water!</h3>
 
+<script>
+     var myTimer;
+     function clock() {
+      myTimer = setInterval(myClock, 1000);
+     var c = 10800;
 
-<script src="//www.powr.io/powr.js?external-type=html"></script> 
- <div class="powr-countdown-timer" id="eb966602_1524662910"></div>
- <script src="//www.powr.io/powr.js?external-type=html"></script> 
- <div class="powr-countdown-timer" id="145e3bbb_1524663683"></div>
- 
-
-
+     function myClock() {
+       document.getElementById("demo").innerHTML = --c;
+       if (c == 0) {
+         clearInterval(myTimer);
+         alert("Reached Zero! Drink 8 Ounces of Water!");
+       }
+     }
+   }
+</script>
+ <br>
+<button onclick="clock()" style="background-color:;margin:auto;display:block" >Start counter</button>
+<br>
+<button onclick="clearInterval(myTimer)" style="background-color:;margin:auto;display:block">Restart counter</button>
+<br>
+<h3 style="text-align:center; font-family:verdana; color:White">Once you have drank the 8 ounces of water restart the timer.</h3>
 
 </body>
 </html>

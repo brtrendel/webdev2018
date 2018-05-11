@@ -3,6 +3,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
 $(document).ready(function(){
@@ -11,7 +12,7 @@ $(document).ready(function(){
         $("h1, h2, p, h3, li, div").toggleClass("red");
     });
 $("#btn2").click(function(){
-        $("p, h2, h3, li, div").toggle();
+        $("p, h2, h3, li, div"se).toggle();
 });
   
 });
@@ -25,6 +26,7 @@ $("#btn2").click(function(){
 </ul>
         <title>Water</title>
         <h2 style="text-align:center;">Chicago Beach Water Quality</h2>
+        <body style="background-color:lightskyblue;">
         <style>
             p, h1 {font-family:verdana;}
             p {font-size:1.5em;line-height:1.5em; margin-left: 24px;}
@@ -59,7 +61,9 @@ li a:hover {
         
         </style>
     </head>
-    
+   <br>
+   <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Chicago-muni-flag.png" title="Water" width=30% height=5%  style="background-color:;margin:auto;display:block">
+
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
@@ -94,7 +98,8 @@ li a:hover {
 
                     // loop through the records
                     
-                    $.each(data, function(index, value){
+                    //$.each(data, function(index, value){
+                    for (var i; i<16; i++){
                        var html =  "<div><h1>" + "Name: " + value.beach_name  + "</h1>" +
                                     "<p>Temperature: " + value.water_temperature + "<br>" +
                                     "Turbidity: " + value.turbidity + "<br>" + 
@@ -104,7 +109,9 @@ li a:hover {
                                     
                                     
                         $("body").append(html);
-                    });
+                        console.log(html);
+                    }
+                    //});
                 })
             
             
