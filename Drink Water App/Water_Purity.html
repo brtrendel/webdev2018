@@ -79,7 +79,8 @@ li a:hover {
 
         // base URL to the food inspections data
         var baseURL = 'https://data.cityofchicago.org/resource/46rk-hgnz.json';
-         // optional filters we're appending - status
+        
+        // optional filters we're appending - status
 
         
         // full URL
@@ -98,20 +99,17 @@ li a:hover {
 
                     // loop through the records
                     
-                    //$.each(data, function(index, value){
-                    for (var i; i<16; i++){
-                       var html =  "<div><h1>" + "Name: " + value.beach_name  + "</h1>" +
-                                    "<p>Temperature: " + value.water_temperature + "<br>" +
-                                    "Turbidity: " + value.turbidity + "<br>" + 
+                    $.each(data, function(index, value){
+                       var html =  "<div><h1>" + "Beach Name: " + value.beach_name + "</h1>" +
+                                    "<p>Turbidity: " + value.turbidity + "<br>" +
+                                    "Water Temperature: " + value.water_temperature + "<br>" + 
                                     
                                     "</p>" +
                                     "</div>";
                                     
                                     
                         $("body").append(html);
-                        console.log(html);
-                    }
-                    //});
+                    });
                 })
             
             
@@ -122,6 +120,6 @@ li a:hover {
     </script>
     </body>
     
-    </html>
+</html>
         
  
